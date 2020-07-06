@@ -1,0 +1,23 @@
+{
+  "name": "redux-saga-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boiler plate for react redux saga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thealpha93/redux-saga-react-boilerplate.git"
+  },
+  "author": "thealpha93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thealpha93/redux-saga-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/thealpha93/redux-saga-react-boilerplate#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "shelljs": "^0.8.4"
+  }
+}
