@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
 const shell = require("shelljs");
-const colors = require("colors");
-const menu = require("./menu")
+const chalk = require("chalk");
+const menu = require("./menu");
 const fs = require("fs");
 
 const templates = require("./templates/exports");
@@ -35,14 +35,14 @@ const packages = [
 ];
 
 const createApp = (appName) => {
+  console.log("Generating...");
   return new Promise((resolve, reject) => {
     if (appName) {
       shell.exec(`npx create-react-app ${appName}`, () => {
-        console.log("Created react app");
         resolve(true);
       });
     } else {
-      console.log("\nNo app name was provided".red);
+      console.log(chalk.redBright("\nNo app name was provided"));
       resolve(false);
     }
   });
@@ -63,7 +63,7 @@ const createFolders = async () => {
 
 const installPackages = async () => {
   return new Promise((resolve) => {
-    console.log("Installing packages".cyan);
+    console.log(chalk.cyanBright("Installing packages"));
     shell.exec(`npm i ${packages.join(" ")}`, () => resolve());
   });
 };
@@ -86,21 +86,26 @@ const updateTemplates = async () => {
 };
 
 const run = async () => {
-  const {appName, boilerPlate} = await menu()
+  let error = false;
+  if (process.argv[2] !== "generate" || process.argv[3] !== "app") {
+    error = true;
+  }
+  const { appName, boilerPlate } = await menu(error);
   let success = await createApp(appName);
   if (!success) {
     console.log(
-      "Something went wrong while trying to create a new React app using create-react-app"
-        .red
+      chalk.red("Something went wrong while trying to create a new React app using create-react-app")
     );
     return false;
   }
-  if(boilerPlate === 'redux-saga') {
+  if (boilerPlate === "Redux Saga") {
     await changeDirectory(appName);
     await createFolders();
     await installPackages();
     await updateTemplates();
-    console.log("All done");
+    console.log(chalk.cyan("\nWe suggest that you begin by typing:"));
+    console.log(chalk.cyan(`\n\n\tcd ${appName}`));
+    console.log(chalk.cyan(`\n\tyarn start`));
   }
 };
 

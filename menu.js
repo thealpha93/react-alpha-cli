@@ -3,27 +3,16 @@ const chalk = require("chalk");
 const figlet = require("figlet");
 
 const init = () => {
-  const fonts = [
-    "Star Wars",
-    "Standard",
-    "Slant",
-    "Pagga",
-    "Mirror",
-    "Impossible",
-    "DOS Rebel",
-    "Doom",
-    "Doh",
-    "Bulbhead",
-  ];
   console.log(
-    chalk.green(
+    chalk.cyanBright(
       figlet.textSync("React +", {
-        font: "Doh",
+        font: "Impossible",
         horizontalLayout: "default",
         verticalLayout: "default",
       })
     )
   );
+  console.log(chalk.yellowBright('With contribution from: thealpha93'))
 };
 
 const askQuestions = () => {
@@ -52,11 +41,17 @@ const askQuestions = () => {
   return inquirer.prompt(questions);
 };
 
-module.exports = async () => {
+module.exports = async (error) => {
   // show script introduction
   init();
+  if(error){
+    console.log(
+      chalk.redBright("Missing required argument 'what'")
+    );
+    console.log("\nTo generate an app type:")
+    console.log(chalk.cyan("\treact-plus generate app"))
+    process.exit()
+  }
   // ask questions
-  const answers = await askQuestions();
-  console.log(answers)
-  return answers
+  return await askQuestions();
 };
