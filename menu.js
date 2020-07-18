@@ -49,7 +49,7 @@ module.exports = async (error) => {
       chalk.redBright("Missing required argument 'what'")
     );
     console.log("\nTo generate an app type:")
-    console.log(chalk.cyan("\treact-plus generate app"))
+    console.log(chalk.cyan("\treactgen generate app"))
     process.exit()
   }
   // ask questions
