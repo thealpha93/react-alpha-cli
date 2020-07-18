@@ -1,5 +1,5 @@
 {
-  "name": "reactgen-cli",
+  "name": "react-alpha-cli",
   "version": "1.0.0",
   "description": "Generate Boiler plates for react",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thealpha93/reactgen-cli.git"
+    "url": "git+https://github.com/thealpha93/react-alpha-cli.git"
   },
   "author": "thealpha93 <tmaakash143@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thealpha93/reactgen-cli/issues"
+    "url": "https://github.com/thealpha93/react-alpha-cli/issues"
   },
-  "homepage": "https://github.com/thealpha93/reactgen-cli#readme",
+  "homepage": "https://github.com/thealpha93/react-alpha-cli#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "figlet": "^1.5.0",
@@ -24,6 +24,6 @@
     "shelljs": "^0.8.4"
   },
   "bin": {
-    "reactgen": "index.js"
+    "react-alpha": "index.js"
   }
 }
