@@ -64,7 +64,7 @@ const createFolders = async () => {
 const installPackages = async () => {
   return new Promise((resolve) => {
     console.log(chalk.cyanBright("Installing packages"));
-    shell.exec(`npm i ${packages.join(" ")}`, () => resolve());
+    shell.exec(`yarn add ${packages.join(" ")}`, () => resolve());
   });
 };
 
