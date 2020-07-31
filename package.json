@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Generate Boiler plates for react",
   "main": "index.js",
+  "keywords": ["react", "react-plus", "react-alpha-cli"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "index.js"

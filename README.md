@@ -25,7 +25,7 @@ Getting up and running is easy
     ```bash
     react-alpha generate app
     ```
-5. Enter the name of the app and choose the template you need amd you're all set to go.
+5. Enter the name of the app and choose the template you need and you're all set to go.
 
 
 ## Changelog
