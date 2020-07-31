@@ -1,6 +1,6 @@
 {
   "name": "react-alpha-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate Boiler plates for react",
   "main": "index.js",
   "keywords": ["react", "react-plus", "react-alpha-cli"],
